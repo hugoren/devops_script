@@ -1,0 +1,17 @@
+#应用公共变量
+export BASH_ENV=/etc/profile
+
+CP_PACKAGE=/data/ci/package/${APP}
+DETECTION_APP="http://127.0.0.1:${HTTP_PORT}"
+APP_PATH=/data/ci/publish/${APP}
+APP_PKG=${APP}-1.0-SNAPSHOT
+PKG_PATH=${APP_PATH}/${APP_PKG}
+UP_TIME=`date +%Y%m%d-%H%M%S`
+
+#脚本路径
+SHELL_PATH="/data/_share/applicationScript"
+
+#第三方jar
+ONEAPM="/data/_share/lib/oneapm/oneapm.jar"
+KAMON="/data/_share/lib/aspectjweaver-1.8.7.jar"
+
