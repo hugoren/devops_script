@@ -32,6 +32,7 @@
          MOBILE_HTPP_PARAMETER=""
    fi
 
+#
 #根据参数执行不同的功能
    if [ $# -eq 2 ];then
        source ${SHELL_PATH}/$1
