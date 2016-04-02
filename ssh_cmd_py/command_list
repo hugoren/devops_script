@@ -1,0 +1,4 @@
+cd /data && touch command.txt
+logstash_pid = `ps -ef|grep logstash |grep -v grep |awk '{print $2}'`
+echo `ps -ef|grep logstash |grep -v grep |awk '{print $2}'` >>/data/command.txt
+echo `ps -ef|grep logstash |grep -v grep |awk '{print $2}'`
