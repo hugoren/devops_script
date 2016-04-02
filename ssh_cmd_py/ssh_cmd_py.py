@@ -20,7 +20,6 @@ class ssh_client(threading.Thread):
             ssh = paramiko.SSHClient()
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             ssh.connect(self.ip,22,self.username,self.password,timeout=5)
-            print self.ip
             for command in self.commands:
                 stdin,stdout,stderr = ssh.exec_command(command)
                 # return_code = ssh.subprocess.Popen('echo "90909" >>/Users/hugo/test.txt', shell=True)
@@ -38,9 +37,9 @@ if __name__ == '__main__':
     password = sys.argv[3]
     command_list = open('command_list','r')
     commands = []
-    threads = []
+    # threads = []
     for each_command in command_list:
         commands.append(each_command)
         temp_thread = ssh_client(ip,username,password,commands)
         # threads.append(temp_thread.ssh_exce_cmd())
-        threading.Thread(temp_thread.ssh_exce_cmd()).start()
+    threading.Thread(temp_thread.ssh_exce_cmd()).start()
