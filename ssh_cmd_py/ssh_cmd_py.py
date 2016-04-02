@@ -42,6 +42,5 @@ if __name__ == '__main__':
     for each_command in command_list:
         commands.append(each_command)
         temp_thread = ssh_client(ip,username,password,commands)
-        threads.append(temp_thread.ssh_exce_cmd())
-    # for thread in threads:
-    #     thread.start()
+        # threads.append(temp_thread.ssh_exce_cmd())
+        threading.Thread(temp_thread.ssh_exce_cmd()).start()
