@@ -24,11 +24,15 @@ class ssh_client(threading.Thread):
                 stdin,stdout,stderr = ssh.exec_command(command)
                 # return_code = ssh.subprocess.Popen('echo "90909" >>/Users/hugo/test.txt', shell=True)
             stdin.write("Y")
-            print stdout.read()
+            if  len(stdout.read()) < 2:
+                # print stdout.read()
+                print  -1
+            else:
+                 print 1
             # print return_code
             ssh.close()
-        except:
-            print '%s ip ssh err'%(ip)
+        except Exception as e:
+            print e.message
 
 
 if __name__ == '__main__':
